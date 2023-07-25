@@ -4,8 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Battle from './pages/Battle';
 import About from './pages/About';
-import Navbar from './components/Navbar';
-import Banner from './components/Banner';
+
 
 
 // export default function App() {
