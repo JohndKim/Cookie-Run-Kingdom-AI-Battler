@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from '../components/Navbar';
 
-const Battler = () => {
+export default function Battler() {
     return (
         <>
         <Navbar />
@@ -9,7 +9,4 @@ const Battler = () => {
         </>
         
     );
-
 }
-
-export default Battler

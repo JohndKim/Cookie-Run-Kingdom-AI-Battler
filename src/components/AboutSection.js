@@ -1,4 +1,4 @@
-export default function About_Section() {
+export default function AboutSection() {
         return (
         <div>
                 <section className="bg-jet text-white">
