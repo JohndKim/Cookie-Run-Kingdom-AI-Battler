@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Banner() {
   return (
     <section className="bg-gray-200">
@@ -17,23 +19,21 @@ function Banner() {
       </p>
 
       <div className="mt-8 flex flex-wrap justify-center gap-4">
-        <a
-          className="block w-full rounded bg-primary px-12 py-3 text-sm font-medium text-white shadow hover:bg-secondary hover:opacity-90 focus:outline-none focus:ring active:bg-red-500 sm:w-auto"
-          href="/battle"
-        >
-          Battle
-        </a>
-
-        <a
-          className="block w-full rounded px-12 py-3 text-sm font-medium text-primary shadow hover:text-secondary hover:opacity-90 focus:outline-none focus:ring active:text-red-500 sm:w-auto"
-          href="/about"
-        >
+        <Link to ="/battler">
+          <div className="block w-full rounded bg-primary px-12 py-3 text-sm font-medium text-white shadow hover:bg-secondary hover:opacity-90 focus:outline-none focus:ring active:bg-red-500 sm:w-auto">
+          Get Started
+          </div>
+        </Link>
+        <Link to="/about">
+          <div className="block w-full rounded px-12 py-3 text-sm font-medium text-primary shadow hover:text-secondary hover:opacity-90 focus:outline-none focus:ring active:text-red-500 sm:w-auto">
           Learn More
-        </a>
+          </div>
+        </Link>
       </div>
     </div>
   </div>
 </section>
+
   );
 }
 
