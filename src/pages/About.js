@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from '../components/Navbar';
-import Banner from '../components/Banner';
-import About_Section from '../components/About_Section';
+// import Banner from '../components/Banner';
+import AboutSection from '../components/AboutSection';
 
 export default function About() {
     return ( 
@@ -9,7 +9,7 @@ export default function About() {
         <div className="bg-slate-600">
         {/* <h1>hi</h1> */}
             <Navbar/>      
-            <About_Section/>
+            <AboutSection/>
         </div>
         </>
     );
