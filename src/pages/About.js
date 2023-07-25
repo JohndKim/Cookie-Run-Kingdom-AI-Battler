@@ -6,8 +6,11 @@ import About_Section from '../components/About_Section';
 export default function About() {
     return ( 
         <>
-            <Navbar/>       
+        <div className="bg-slate-600">
+        {/* <h1>hi</h1> */}
+            <Navbar/>      
             <About_Section/>
+        </div>
         </>
     );
 }
