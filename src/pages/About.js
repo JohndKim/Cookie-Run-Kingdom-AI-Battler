@@ -1,14 +1,13 @@
 import React from 'react'
 import Navbar from '../components/Navbar';
+import Banner from '../components/Banner';
+import About_Section from '../components/About_Section';
 
-const About = () => {
-    return (
+export default function About() {
+    return ( 
         <>
-        <Navbar/>
-        <div>About Us</div>
+            <Navbar/>       
+            <About_Section/>
         </>
     );
-
 }
-
-export default About

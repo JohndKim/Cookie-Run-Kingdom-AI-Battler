@@ -24,7 +24,6 @@ function Banner() {
           Get Started
           </div>
         </Link>
-
         <Link to="/about">
           <div className="block w-full rounded px-12 py-3 text-sm font-medium text-primary shadow hover:text-secondary hover:opacity-90 focus:outline-none focus:ring active:text-red-500 sm:w-auto">
           Learn More
