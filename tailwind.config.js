@@ -22,6 +22,9 @@ module.exports = {
         c3: "#D6CFCB",
         c4: "#F9E0BB",
       },
+      fontFamily: {
+        'oswald': ['OSWALD', 'sans-serif'],
+      }
     },
   },
   plugins: [],

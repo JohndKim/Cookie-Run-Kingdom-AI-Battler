@@ -2,3 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: "OSWALD";
+    src: url("../public/fonts/Oswald.ttf");
+  }
