@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom"
 import cookie from "../svg/cookie.svg"
 
-
 function Navbar() {
     return (
         <header className="bg-white">
