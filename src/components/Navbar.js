@@ -17,13 +17,13 @@ function Navbar() {
               </Link>
             </div>
       
-            <div className="md:flex md:items-center md:gap-12">
+            <div className="md:flex md:items-center md:gap-12 font-dmsans text-black">
               <nav aria-label="Global" className="hidden md:block">
                 <ul className="flex items-center gap-6 text-sm">
                 {/* battler */}
                   <li>
                     <Link to="/battler">
-                    <div className="text-secondary transition hover:text-gray-500/75">
+                    <div className="transition hover:text-gray-500/75">
                       Battler
                     </div>
                     </Link>
@@ -31,7 +31,7 @@ function Navbar() {
                 {/* about us */}
                   <li>
                     <Link to ="/about">
-                    <div className="text-secondary transition hover:text-gray-500/75">
+                    <div className="transition hover:text-gray-500/75">
                       About
                     </div>
                     </Link>

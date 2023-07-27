@@ -24,7 +24,12 @@ module.exports = {
       },
       fontFamily: {
         'oswald': ['OSWALD', 'sans-serif'],
-      }
+        'marcellus': ['MARCELLUS', 'sans-serif'],
+        'dmsans': ['DMSANS', 'sans-serif'],
+      },
+      fontWeight: {
+        thicc: '900',
+      },
     },
   },
   plugins: [],

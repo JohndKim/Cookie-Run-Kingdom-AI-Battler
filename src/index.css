@@ -5,4 +5,8 @@
 @font-face {
     font-family: "OSWALD";
     src: url("../public/fonts/Oswald.ttf");
+    font-family: "MARCELLUS";
+    src: url("../public/fonts/Marcellus.ttf");
+    font-family: "DMSANS";
+    src: url("../public/fonts/DMSans.ttf")
   }
