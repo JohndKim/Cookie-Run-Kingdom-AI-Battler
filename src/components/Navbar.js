@@ -10,6 +10,7 @@ function Navbar() {
               <Link to ="/home">
               <div className="block">
                 <span className="sr-only">Home</span>
+                {/* LOGO */}
                 <img alt="cookie logo" src={cookie} style={{width: 50, height: 50}}/>
                 
               </div>

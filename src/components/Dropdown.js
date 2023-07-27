@@ -64,11 +64,15 @@ function Dropdown({ cookies, value, onChange}) {
 
     // return everything from before
     return (
+        <>
+        {/* <AddPicture cookies={cookies} value={value}/> */}
         <div ref={divEl} className="w-48 relative">
             <div className="flex justify-between items-center cursor-pointer border rounded p-3 shadow bg-white w-full" onClick={handleClick}>{value?.label || 'Select a Cookie'}</div>
             {/* if open, then show cookie list */}
             {isOpen && <div className="absolute top-full border rounded p-3 shadow bg-white w-full">{renderedCookies}</div>}
         </div>
+        {/* <h2 className="mt-2 font-bold">{value?.label || 'Cookie'}</h2> */}
+        </>
     );
 }
 
