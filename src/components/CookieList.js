@@ -9,37 +9,89 @@ import { useState } from 'react';
 export default function CookieList() {
     // use state for if cookie is selected or not
     const [ selection, setSelection ] = useState(null);
+    // use state for entire cookie list object
+    const [ cookies, setCookies ] = useState([{
+        label: 'Strawberry Cookie',
+        value: 'strawberry',
+        src: strawberry,
+        selected: false,
+    }, {
+        label: 'Gingerbrave',
+        value: 'gingerbrave',
+        src: gingerbrave,
+        selected: false,
+    }, {
+        label: 'Muscle Cookie',
+        value: 'muscle',
+        src: gingerbrave,
+        selected: false,
+    },{
+        label: 'Wizard Cookie',
+        value: 'wizard',
+        src: gingerbrave,
+        selected: false,
+    },{
+        label: 'Beet Cookie',
+        value: 'beet',
+        src: gingerbrave,
+        selected: false,
+    },{
+        label: 'Angel Cookie',
+        value: 'angel',
+        src: gingerbrave,
+        selected: false,
+    }]);
+
 
     // function to select cookie
     const handleSelect = (cookie) => {
         setSelection(cookie);
     };
 
-    const cookies = [{
-        label: 'Strawberry Cookie',
-        value: 'strawberry',
-        src: strawberry,
-    }, {
-        label: 'Gingerbrave',
-        value: 'gingerbrave',
-        src: gingerbrave,
-    }, {
-        label: 'Muscle Cookie',
-        value: 'muscle',
-        src: gingerbrave,
-    },{
-        label: 'Wizard Cookie',
-        value: 'wizard',
-        src: gingerbrave,
-    },{
-        label: 'Beet Cookie',
-        value: 'beet',
-        src: gingerbrave,
-    },{
-        label: 'Angel Cookie',
-        value: 'angel',
-        src: gingerbrave,
-    },];
+    // handleCommentEdit: function(id, text) {
+    //     this.setState({
+    //       data: this.state.data.map(el => (el.id === id ? Object.assign({}, el, { text }) : el))
+    //     });
+    // }
+
+    // setCookies
+
+    // cookies = [{
+    //     label: 'Strawberry Cookie',
+    //     value: 'strawberry',
+    //     src: strawberry,
+    //     selected: false,
+    // }, {
+    //     label: 'Gingerbrave',
+    //     value: 'gingerbrave',
+    //     src: gingerbrave,
+    //     selected: false,
+    // }, {
+    //     label: 'Muscle Cookie',
+    //     value: 'muscle',
+    //     src: gingerbrave,
+    //     selected: false,
+    // },{
+    //     label: 'Wizard Cookie',
+    //     value: 'wizard',
+    //     src: gingerbrave,
+    //     selected: false,
+    // },{
+    //     label: 'Beet Cookie',
+    //     value: 'beet',
+    //     src: gingerbrave,
+    //     selected: false,
+    // },{
+    //     label: 'Angel Cookie',
+    //     value: 'angel',
+    //     src: gingerbrave,
+    //     selected: false,
+    // }];
+
+    // const listCookies = cookies.map(cookie =>
+        
+    // );
+
 
     return (
         <div className="block rounded-xl border border-gray-100 p-4 shadow-sm hover:border-gray-200 hover:ring-1 hover:ring-gray-200 focus:outline-none focus:ring">        

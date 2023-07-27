@@ -35,6 +35,7 @@ function Dropdown({ cookies, value, onChange}) {
     const handleCookieClick = (cookie) => {
         setIsOpen(false);
         onChange(cookie);
+        
     }
 
 
@@ -61,6 +62,8 @@ function Dropdown({ cookies, value, onChange}) {
     // if (selection) {
     //     content = selection.label;
     // }
+
+    console.log(value);
 
     // return everything from before
     return (
