@@ -1,6 +1,6 @@
 import Navbar from '../components/Navbar';
 import Banner from '../components/Banner';
-import ASection from '../components/ASection'
+import BannerImage from '../components/BannerImage'
 
 
 export default function Home() {
@@ -8,8 +8,8 @@ export default function Home() {
     <>
       <div>
         <Navbar/>
-        {/* <ASection /> */}
-        <Banner />
+        <BannerImage />
+        {/* <Banner /> */}
       </div>
     </>
   );
