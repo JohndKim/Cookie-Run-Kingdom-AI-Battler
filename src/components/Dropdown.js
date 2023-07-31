@@ -9,7 +9,6 @@ function Dropdown({ cookies, value, onChange}) {
     useEffect(() => {
         const handler = (event) => {
             if (!divEl.current) {
-
                 return;
             }
 
