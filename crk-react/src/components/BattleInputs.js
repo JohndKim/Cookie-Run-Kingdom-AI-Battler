@@ -1,5 +1,4 @@
 import CookieList from './CookieList'
-import AddPicture from './CookieImage'
 // import Dropdown from './Dropdown'
 // import CookiesList from './CookiesList'
 
@@ -14,21 +13,14 @@ export default function BattleInputs() {
 
             {/* FIRST TEAM LAYOUT */}
                 <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
+                    <CookieList/>
+                    <CookieList/>
+                    <CookieList/>
+                    <CookieList/>
+                    <CookieList/>
 
-                {/* start one cookie */}
-                
-              
-                <CookieList/>
-                
-                
-                {/* end of cookie */}
 
-                <CookieList/>
-                <CookieList/>
-                <CookieList/>
-                <CookieList/>
-
-            </div>
+                </div>
 
             {/* SECOND TEAM LAYOUT */}
 

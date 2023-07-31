@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 export default function BannerImage() {
 
     return (
@@ -31,20 +33,17 @@ export default function BannerImage() {
                         </p>
 
                         {/* BUTTONS */}
-                        <div className="mt-8 flex flex-wrap gap-4 text-center">
-                            <a
-                            href="#"
-                            className="block w-full rounded bg-primary px-12 py-3 text-sm font-medium text-white shadow hover:bg-c2 hover:opacity-90 focus:outline-none focus:ring active:bg-c2 sm:w-auto"
-                            >
+                        <div className="mt-8 flex flex-wrap justify-center gap-4 font-dmsans">
+                            <Link to ="/battler">
+                            <div className="block w-full rounded bg-primary px-12 py-3 text-sm font-medium text-white shadow hover:bg-c2 hover:opacity-90 focus:outline-none focus:ring active:bg-c2 sm:w-auto">
                             Get Started
-                            </a>
-
-                            <a
-                            href="#"
-                            className="block w-full rounded bg-white px-12 py-3 text-sm font-medium text-primary shadow hover:text-jet focus:outline-none focus:ring active:text-c2 sm:w-auto"
-                            >
+                            </div>
+                            </Link>
+                            <Link to="/about">
+                            <div className="block w-full rounded px-12 py-3 text-sm font-medium text-primary shadow hover:text-jet hover:opacity-90 focus:outline-none focus:ring active:text-red-500 sm:w-auto">
                             Learn More
-                            </a>
+                            </div>
+                            </Link>
                         </div>
                     </div>
                 </div>

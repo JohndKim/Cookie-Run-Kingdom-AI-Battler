@@ -40,13 +40,13 @@ function Dropdown({ cookies, value, onChange}) {
 
 
     // show list of all cookies
+
     const renderedCookies = cookies.map((cookie) => {
         // if a cookie is selected
         if (value && cookie.value == value.value) {
             return (
                 // when clicked, close dropdown and select cookie
-                <div className="bg-gray-400 rounded cursor-pointer p-1" onClick={() => handleCookieClick(cookie)} key={cookie.value}>{cookie.label}
-                </div>
+                    <div className="bg-gray-400 rounded cursor-pointer p-1" onClick={() => handleCookieClick(cookie)} key={cookie.value}>{cookie.label}</div>
             );
         }
 
@@ -69,16 +69,16 @@ function Dropdown({ cookies, value, onChange}) {
     return (
         <>
         {/* <AddPicture cookies={cookies} value={value}/> */}
-        <div ref={divEl} className="w-48 relative">
-            <div className="flex justify-between items-center cursor-pointer border rounded p-3 shadow bg-white w-full" onClick={handleClick}>{value?.label || 'Select a Cookie'}</div>
+        <div ref={divEl} className="w-48">
+        
+            {/*hover fix needed because it only does the text and not the full box, wip */}
+            <div className="px-4 py-2 text-sm text-gray-600 font-medium" onClick={handleClick}>{value?.label || 'Select a Cookie'}</div>
             {/* if open, then show cookie list */}
-            {isOpen && <div className="absolute top-full border rounded p-3 shadow bg-white w-full">{renderedCookies}</div>}
+            {isOpen && <div className="absolute rounded-lg p-3 text-sm text-gray-500 bg-gray-50 hover:text-gray-700">{renderedCookies}</div>}
         </div>
         {/* <h2 className="mt-2 font-bold">{value?.label || 'Cookie'}</h2> */}
         </>
     );
 }
-
-
 
 export default Dropdown;

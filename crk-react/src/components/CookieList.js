@@ -1,7 +1,8 @@
-import Dropdown from './Dropdown.js';
 import strawberry from '../svg/strawberry.svg'
 import gingerbrave from '../svg/gingerbrave.svg'
-import CookieImage from './CookieImage.js'
+import muscle from '../svg/muscle.svg'
+import CookieImage from './CookieImage'
+import Dropdown from './Dropdown'
 
 
 import { useState } from 'react';
@@ -10,6 +11,10 @@ export default function CookieList() {
     // use state for if cookie is selected or not
     const [ selection, setSelection ] = useState(null);
     // use state for entire cookie list object
+    // label: Name
+    // value: value given 
+    // src: photo
+    // selected: selection boolean
     const [ cookies, setCookies ] = useState([{
         label: 'Strawberry Cookie',
         value: 'strawberry',
@@ -23,7 +28,7 @@ export default function CookieList() {
     }, {
         label: 'Muscle Cookie',
         value: 'muscle',
-        src: gingerbrave,
+        src: muscle,
         selected: false,
     },{
         label: 'Wizard Cookie',
@@ -47,6 +52,16 @@ export default function CookieList() {
     const handleSelect = (cookie) => {
         setSelection(cookie);
     };
+    return (
+        <div className="block rounded-xl border border-gray-100 p-4 shadow-sm hover:border-gray-200 hover:ring-1 hover:ring-gray-200 focus:outline-none focus:ring">        
+            <CookieImage value={selection}/>
+
+            <Dropdown cookies={cookies} value={selection} onChange={handleSelect} />
+            {/* <h2 className="mt-2 font-bold">Add Cookie</h2> */}
+        </div>
+    );
+}
+
 
     // handleCommentEdit: function(id, text) {
     //     this.setState({
@@ -91,14 +106,3 @@ export default function CookieList() {
     // const listCookies = cookies.map(cookie =>
         
     // );
-
-
-    return (
-        <div className="block rounded-xl border border-gray-100 p-4 shadow-sm hover:border-gray-200 hover:ring-1 hover:ring-gray-200 focus:outline-none focus:ring">        
-            <CookieImage cookies={cookies} value={selection}/>
-
-             <Dropdown cookies={cookies} value={selection} onChange={handleSelect} />
-            {/* <h2 className="mt-2 font-bold">Add Cookie</h2> */}
-        </div>
-    );
-}

@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 
-function CookieImage({ cookies, value }) {
+function CookieImage({value}) {
 
     // console.log(cookies, value)
     // const selectedCookie = cookies.filter(cookies => cookies.value === value.value);
@@ -23,12 +23,12 @@ function CookieImage({ cookies, value }) {
             {/* GRAY PADDING AROUND IMG */}
             <span className="inline-block rounded-lg bg-gray-50 p-3">
 
-                {/* IMAGE */}
-                
+                {/* IMAGE */}        
 
 
                 {/* {value?.label || 'Select a Cookie'} */}
 
+                {/*needs to be change with a sign with add icon for cookie */}
                 <svg
                 className="h-6 w-6"
                 fill="none"
@@ -65,7 +65,6 @@ function CookieImage({ cookies, value }) {
                 </span>
             </div>
             );
-
     }
 }
 
