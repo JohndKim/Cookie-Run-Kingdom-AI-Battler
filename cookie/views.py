@@ -1,14 +1,8 @@
 from django.shortcuts import render
 from django.shortcuts import render
-from django.shortcuts import render
 from rest_framework import viewsets
-from cookie.serializers import CookieSerializer
-from cookie.models import Cookie
-
-
-def index(request):
-    return render(request, 'index.html')
-
+from .serializers import CookieSerializer
+from .models import Cookie
 
 # Create your views here.
 
