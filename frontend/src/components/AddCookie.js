@@ -99,11 +99,11 @@ function AddCookie() {
                 <button onClick={createCookie}>Create Cookie</button>
             </form> */}
 
-            <div className="overflow-x-auto">
+            <div className="">
             {/* ENTIRE TABLE */}
-            <table className="min-w-full divide-y-2 divide-gray-200 bg-white text-sm">
+            <table className="table-fixed min-w-full max-w-full divide-y-2 divide-gray-200 bg-white text-sm">
                 {/* TABLE HEAD */}
-                <thead className="ltr:text-left rtl:text-right">
+                <thead className="ltr:text-left rtl:text-right w-screen">
                     <tr>
                         <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
                         Name
@@ -123,6 +123,16 @@ function AddCookie() {
 
                 {/* TABLE BODY */}
                 <tbody className="divide-y divide-gray-200">
+
+                    <CookieTableRow 
+                    name={"booo"}
+                    rarity={"common"}
+                    attack={50}
+                    defense={30}
+                    health={20}
+                    description={"booooooooooooooooooooooooooooooo booooooooooooooooooooooooooooooo booooooooooooooooooooooooooooooo booooooooooooooooooooooooooooooo booooooooooooooooooooooooooooooo booooooooooooooooooooooooooooooo booooooooooooooooooooooooooooooo booooooooooooooooooooooooooooooo booooooooooooooooooooooooooooooo oooooooooooooo oooooooooooooo oooooooooooooo oooooooooooooo oooooooooooooo ooooooo ooooooo ooooooo ooooooo ooooooo ooooooo ooooooo ooooooo ooooooo ooooooo ooooooo ooooooo "}
+                    />
+
                     {/* ROWS OF COOKIE */}
                     { cookies && cookies.map(cookie => <CookieTableRow
                     // key={cookie.id}
