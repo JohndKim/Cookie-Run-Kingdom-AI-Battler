@@ -7,8 +7,6 @@ export default function Test() {
         <>
         <div className="bg-gray-100">
             <Navbar />
-            <div className="flex justify-center">
-            </div>
             <AddCookie />
         </div>
         </>
