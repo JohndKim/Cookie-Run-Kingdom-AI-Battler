@@ -1,7 +1,12 @@
 import {useState, useEffect} from "react";
+import CSRFToken from "../universal/CSRFToken";
 import CookieTable from "./CookieTable";
 import CookieTableRow from "./CookieTableRow";
 import axios from "axios";
+
+// CSRF TOKEN TO ENSURE ACCESS TO DB
+axios.defaults.xsrfCookieName = 'csrftoken'
+axios.defaults.xsrfHeaderName = 'X-CSRFToken'
 
 // should be like cookie info
 function AddCookie() {
@@ -24,8 +29,9 @@ function AddCookie() {
     function getCookies() {
     axios({
         method: "GET",
-        url:"/api/cookies/?format=json",
+        url:"cookies_db/",
         // '/api/cookies/?format=json'
+        // 
         }).then((response)=>{ // success
             const data = response.data
             setCookies(data)
@@ -42,7 +48,7 @@ function AddCookie() {
     function createCookie(event) {
         axios({
             method: "POST",
-            url:"/api/cookies",
+            url:"cookies_db/",
             data:{
                 name: formCookie.name,
                 rarity: formCookie.rarity,
@@ -107,24 +113,6 @@ function AddCookie() {
     return(
         <div>
             <div className='h-screen bg-background pt-6'>
-                {/* ADD COOKIE FORM */}
-                <form className="create-cookie">
-                    {/* name */}
-                    <input onChange={handleChange} text={formCookie.name} name="name" placeholder="Name" value={formCookie.name} />
-                    {/* rarity */}
-                    <input onChange={handleChange} text={formCookie.rarity} name="rarity" placeholder="Rarity" value={formCookie.rarity} />
-                    {/* attack */}
-                    <input onChange={handleChange} text={formCookie.attack} name="attack" placeholder="Attack" value={formCookie.attack} />
-                    {/* defense */}
-                    <input onChange={handleChange} text={formCookie.defense} name="defense" placeholder="Defense" value={formCookie.defense} />
-                    {/* health */}
-                    <input onChange={handleChange} text={formCookie.health} name="health" placeholder="Health" value={formCookie.health} />
-                    {/* description */}
-                    <textarea onChange={handleChange} name="description" placeholder="Description" value={formCookie.content} />
-                    {/* creates new cookie and adds to databse */}
-                    <button onClick={createCookie}>Create Cookie</button>
-                </form>
-
                 {/* TABLE */}
                 <div className="mx-16 bg-primary/10 h-full border-2 border-primary/40 rounded">
                 {/* ENTIRE TABLE */}
@@ -179,6 +167,24 @@ function AddCookie() {
                         </tbody>
                     </table>
                 </div>
+                {/* POST COOKIE FORM */}
+                <form className="create-cookie bg-primary/10 shadow-md rounded px-8 pt-6 pb-8 my-6 mx-16 border-2 border-primary/40 rounded">
+                    <CSRFToken />
+                    {/* name */}
+                    <input onChange={handleChange} text={formCookie.name} name="name" placeholder="Name" value={formCookie.name} className="shadow appearance-none border rounded w-1/4 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mx-5"/>
+                    {/* rarity */}
+                    <input onChange={handleChange} text={formCookie.rarity} name="rarity" placeholder="Rarity" value={formCookie.rarity} className="shadow appearance-none border rounded w-1/4 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mx-5"/>
+                    {/* attack */}
+                    <input onChange={handleChange} text={formCookie.attack} name="attack" placeholder="Attack" value={formCookie.attack} className="shadow appearance-none border rounded w-1/4 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mx-5"/>
+                    {/* defense */}
+                    <input onChange={handleChange} text={formCookie.defense} name="defense" placeholder="Defense" value={formCookie.defense} className="shadow appearance-none border rounded w-1/4 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mx-5"/>
+                    {/* health */}
+                    <input onChange={handleChange} text={formCookie.health} name="health" placeholder="Health" value={formCookie.health} className="shadow appearance-none border rounded w-1/4 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mx-5"/>
+                    {/* description */}
+                    <textarea onChange={handleChange} name="description" placeholder="Description" value={formCookie.content} className="shadow appearance-none border rounded w-1/4 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mx-5"/>
+                    {/* creates new cookie and adds to databse */}
+                    <button onClick={createCookie} className="bg-primary hover:bg-primary/90 text-white font-dmsans py-2 px-4 rounded focus:outline-none focus:shadow-outline">Create Cookie</button>
+                </form>
         </div>
       </div>
     );
