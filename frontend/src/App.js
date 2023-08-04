@@ -1,9 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Home from './pages/Home';
-import Battle from './pages/Battler';
+import Battle from './pages/Battle';
 import About from './pages/About';
-import Test from './pages/Test';
+import Cookies from './pages/Cookies';
 
 
 // export default function App() {
@@ -22,10 +22,10 @@ export default function App() {
       <Router>
         <Routes>
           <Route exact path='/' element={<Home/>} />
-          <Route path='/battler' element={<Battle/>} />
+          <Route path='/battle' element={<Battle/>} />
           <Route path='/about' element={<About/>} />
           <Route path='/home' element={<Home/>} />
-          <Route path='/test' element={<Test/>} />
+          <Route path='/cookies' element={<Cookies/>} />
         </Routes>
       </Router>
     </>

@@ -19,6 +19,7 @@ class Rarity(models.Model):
 
 # cookie object class
 class Cookie(models.Model):
+    # id = models.IntegerField()
     name = models.CharField(max_length=100)
     
     rarity = models.CharField(max_length=50)

@@ -1,6 +1,6 @@
-import Navbar from '../components/Navbar';
-import Banner from '../components/Banner';
-import BannerImage from '../components/BannerImage'
+import Navbar from '../components/universal/Navbar';
+import Banner from '../components/banner/Banner';
+import BannerImage from '../components/banner/BannerImage'
 
 
 export default function Home() {
@@ -8,8 +8,8 @@ export default function Home() {
     <>
       <div>
         <Navbar/>
-        <BannerImage />
-        {/* <Banner /> */}
+        {/* <BannerImage /> */}
+        <Banner />
       </div>
     </>
   );
