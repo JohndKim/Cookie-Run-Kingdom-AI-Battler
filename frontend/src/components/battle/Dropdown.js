@@ -39,23 +39,26 @@ function Dropdown({ cookies, value, onChange}) {
     }
 
 
-    // show list of all cookies
-
+    // show list of all cookiess
+    // console.log(cookies.cookies)
+    // const renderedCookies = null
     const renderedCookies = cookies.map((cookie) => {
-        // if a cookie is selected
-        if (value && cookie.value == value.value) {
+    // if a cookie is selected
+        if (value && cookie.name == value.name) {
             return (
                 // when clicked, close dropdown and select cookie
-                    <div className="bg-gray-400 rounded cursor-pointer p-1" onClick={() => handleCookieClick(cookie)} key={cookie.value}>{cookie.label}</div>
+                    <div className="bg-gray-400 rounded cursor-pointer p-1" onClick={() => handleCookieClick(cookie)} key={cookie.name}>{cookie.name}</div>
             );
         }
 
         return (
             // when clicked, close dropdown and select cookie
-            <div className="hover:bg-sky-100 rounded cursor-pointer p-1" onClick={() => handleCookieClick(cookie)} key={cookie.value}>{cookie.label}
+            <div className="hover:bg-sky-100 rounded cursor-pointer p-1" onClick={() => handleCookieClick(cookie)} key={cookie.name}>{cookie.name}
             </div>
         );
     });
+
+    console.log(renderedCookies)
 
     // update selected cookie
     // let content = "Select a Cookie";
@@ -63,7 +66,7 @@ function Dropdown({ cookies, value, onChange}) {
     //     content = selection.label;
     // }
 
-    console.log(value);
+    // console.log(value);
 
     // return everything from before
     return (
@@ -72,7 +75,7 @@ function Dropdown({ cookies, value, onChange}) {
         <div ref={divEl} className="w-48 hover:cursor-pointer">
         
             {/*hover fix needed because it only does the text and not the full box, wip */}
-            <div className="px-4 py-2 text-sm text-black text-center font-medium" onClick={handleClick}>{value?.label || 'Select a Cookie'}</div>
+            <div className="px-4 py-2 text-sm text-black text-center font-medium" onClick={handleClick}>{value?.name || 'Select a Cookie'}</div>
             {/* if open, then show cookie list */}
             {isOpen && <div className="absolute rounded-lg p-3 text-sm text-black bg-background">{renderedCookies}</div>}
         </div>

@@ -1,6 +1,5 @@
 import {useState, useEffect} from "react";
 import CSRFToken from "../universal/CSRFToken";
-import CookieTable from "./CookieTable";
 import CookieTableRow from "./CookieTableRow";
 import axios from "axios";
 
@@ -126,9 +125,9 @@ function AddCookie() {
                                 <th className="whitespace-nowrap px-4 py-2 font-medium">
                                 Rarity
                                 </th>
-                                <th className="whitespace-nowrap px-4 py-2 font-medium">
-                                Stats (ATK, DEF, HP)
-                                </th>
+                                <th className="whitespace-nowrap px-4 py-2 font-medium">ATK</th>
+                                <th className="whitespace-nowrap px-4 py-2 font-medium">DEF</th>
+                                <th className="whitespace-nowrap px-4 py-2 font-medium">HP</th>
                                 <th className="whitespace-nowrap px-4 py-2 font-medium">
                                 Description
                                 </th>

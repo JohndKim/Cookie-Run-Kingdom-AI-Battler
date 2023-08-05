@@ -1,8 +1,50 @@
-import CookieList from './CookieList'
+import CookieSelect from './CookieSelect'
 // import Dropdown from './Dropdown'
 // import CookiesList from './CookiesList'
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
-export default function BattleInputs() {
+function BattleInputs() {
+    // console.log('in battleinputs')
+    const [cookies , setCookies] = useState(null)
+
+    // getCookies()
+
+    // bro this thing doesnt run right away, it runs somehow one iteration late which means that the cookies are null for the first render????? which made stuff annoying
+    useEffect(() => {
+        console.log("use effect!")
+        getCookies()
+    } ,[]);
+    
+
+    console.log(cookies)
+    
+    // get cookies info from database
+    function getCookies() {
+    axios({
+        method: "GET",
+        url:"cookies_db/",
+        // '/api/cookies/?format=json'
+        // 
+        }).then((response)=>{ // success
+            const data = response.data
+            setCookies(data)
+            console.log(response.data)
+            console.log(cookies)
+
+        }).catch((error) => { // failure
+        if (error.response) {
+            console.log(error.response);
+            console.log(error.response.status);
+            console.log(error.response.headers);
+            }
+        })}
+
+
+        
+
+
+
     return (
         <section className="">
         {/* entire 5, 5 team layout*/}
@@ -13,11 +55,12 @@ export default function BattleInputs() {
 
             {/* FIRST TEAM LAYOUT */}
                 <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
-                    <CookieList/>
-                    <CookieList/>
-                    <CookieList/>
-                    <CookieList/>
-                    <CookieList/>
+                    <CookieSelect cookies={cookies}/>
+                    <CookieSelect cookies={cookies}/>
+                    <CookieSelect cookies={cookies}/>
+                    <CookieSelect cookies={cookies}/>
+                    <CookieSelect cookies={cookies}/>
+
 
 
                 </div>
@@ -25,14 +68,17 @@ export default function BattleInputs() {
             {/* SECOND TEAM LAYOUT */}
 
                 <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
-                    <CookieList/>
-                    <CookieList/>
-                    <CookieList/>
-                    <CookieList/>
-                    <CookieList/>
+                    <CookieSelect cookies={cookies}/>
+                    <CookieSelect cookies={cookies}/>
+                    <CookieSelect cookies={cookies}/>
+                    <CookieSelect cookies={cookies}/>
+                    <CookieSelect cookies={cookies}/>
+
                 </div>
             </div>
         </div>
         </section>
     );
 }
+
+export default BattleInputs;

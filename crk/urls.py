@@ -29,6 +29,10 @@ router.register(r'cookies', views.CookieView, 'cookie')
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", views.index, name="index"),
+    path("battle/", views.index, name="index"),
+    path("cookies/", views.index, name="index"),
+    path("about/", views.index, name="index"),
+    path("home/", views.index, name="index"),
     path("api/", include(router.urls)),
     path("cookies_db/", cookie_get_post, name="cookie_get_post"),
     path("cookies_db/<int:pk>/", cookie_detail, name="detail")

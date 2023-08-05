@@ -12,9 +12,12 @@ export default function CoookieTableRow({ key, id, name, rarity, attack, defense
             {name}
             </td>
             <td className="px-4 py-2 text-gray-700 w-1/6">{rarity}</td>
-            <td className="px-4 py-2 text-gray-700 w-1/6">{attack} {defense} {health}</td>
+            <td className="px-4 py-2 text-gray-700 w-1/18">{attack}</td>
+            <td className="px-4 py-2 text-gray-700 w-1/18">{defense}</td>
+            <td className="px-4 py-2 text-gray-700 w-1/18">{health}</td>
             <td className="px-4 py-2 text-gray-700 w-1/2">{description}</td>
-            <td><button onClick={handleClick}>Delete</button></td>
+            <td><button onClick={handleClick} className="
+            inline-block rounded px-4 py-2 text-xs font-medium text-black hover:bg-primary/10 font-dmsans mx-4 border border-primary ">Delete</button></td>
             {/* <td className="whitespace-nowrap px-4 py-2"> */}
             {/* VIEW BUTTON */}
             {/* <a
@@ -22,8 +25,8 @@ export default function CoookieTableRow({ key, id, name, rarity, attack, defense
                 className="inline-block rounded bg-indigo-600 px-4 py-2 text-xs font-medium text-white hover:bg-indigo-700"
             >
                 View
-            </a> */}
-            {/* </td> */}
+            </a>
+            </td> */}
         </tr>
     </>
   );
