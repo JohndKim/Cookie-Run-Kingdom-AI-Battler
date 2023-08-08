@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 
 function CookieImage({value}) {
-
+    console.log(value)
+    // console.log(value.name)
     // console.log(cookies, value)
     // const selectedCookie = cookies.filter(cookies => cookies.value === value.value);
 
@@ -61,7 +62,7 @@ function CookieImage({value}) {
                     {/* IMAGE */}
 
                     {/* {value?.label || 'Select a Cookie'} */}
-                    <img alt="cookie" src={value.src} style={{width: 50, height: 50}}/>
+                    <img alt="cookie" src="strawberry" style={{width: 50, height: 50}}/>
                 </span>
             </div>
             );

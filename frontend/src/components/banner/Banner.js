@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import crunchy from "../../images/crunchychipcookie.png"
 import React from "react";
 import Typed from 'typed.js';
 
@@ -84,12 +85,19 @@ function Banner() {
 
         {/* RIGHT TEXT */}
         <div className="mx-auto max-w-xl text-left">
+          {/* GIF */}
+          <div className="place-self-center" style={{width: 300, height: 300, opacity: 1}}>
+            <img src={crunchy}/>
+          </div>
+        
 
           {/* SHORT INTRO */}
           <p className="mt-4 sm:text-xl/relaxed text-black font-dmsans">
 
             <span ref={desc} />
           </p>
+          
+
         </div>
 
         {/* IMAGE */}

@@ -53,7 +53,7 @@ export default function CookieSelect(cookies) {
     // const [ cookies, setCookies ] = useState([{
     //     label: 'Strawberry Cookie',
     //     value: 'strawberry',
-    //     src: strawberry,
+        // src: strawberry,
     //     selected: false,
     // }, {
     //     label: 'Gingerbrave',
