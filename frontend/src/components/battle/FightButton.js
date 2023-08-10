@@ -1,6 +1,15 @@
+import axios from "axios";
+
+const fetchAPI = () => {
+  axios({
+    method: "GET",
+    url:"battle_system",
+  }).then(response => console.log(response.data))
+}
+
 export default function FightButton(){
     return(
-    <div>
+    <div onClick =  { fetchAPI }>
         <div className="group relative inline-block text-sm font-medium text-white focus:outline-none focus:ring">
           <span
             className="absolute inset-0 border border-accent group-active:border-accent"

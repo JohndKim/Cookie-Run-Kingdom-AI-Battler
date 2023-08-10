@@ -35,7 +35,9 @@ function Dropdown({ cookies, value, onChange}) {
     const handleCookieClick = (cookie) => {
         setIsOpen(false);
         onChange(cookie);
-        
+        //Getting cookie value and adding it to the array of Cookies
+
+        console.log(cookie)
     }
 
 

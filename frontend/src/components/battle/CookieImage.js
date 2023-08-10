@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 
 function CookieImage({value}) {
-    console.log(value)
+    // console.log(value)
     // console.log(value.name)
     // console.log(cookies, value)
     // const selectedCookie = cookies.filter(cookies => cookies.value === value.value);

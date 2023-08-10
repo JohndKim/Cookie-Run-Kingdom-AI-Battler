@@ -3,6 +3,7 @@ from rest_framework import viewsets
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
+from battler.battlerSystem import hello
 # from .serializers import NoteSerializer
 # from .models import Notes
 
@@ -14,9 +15,6 @@ from django.views.decorators.csrf import ensure_csrf_cookie
 
 def index(request):
     return render(request, 'index.html')
-
-
-# Create your views here.
 
 
 # Create your views here.
@@ -61,3 +59,7 @@ def cookie_detail(request, pk):
     if request.method == 'DELETE':
         note.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+def runGame():
+    hello()

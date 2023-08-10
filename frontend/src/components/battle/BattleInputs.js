@@ -1,7 +1,7 @@
 import CookieSelect from './CookieSelect'
 // import Dropdown from './Dropdown'
 // import CookiesList from './CookiesList'
-import { useState, useEffect } from 'react';
+import { useState, useMemo } from 'react';
 import axios from 'axios';
 
 function BattleInputs() {
@@ -11,7 +11,8 @@ function BattleInputs() {
     // getCookies()
 
     // bro this thing doesnt run right away, it runs somehow one iteration late which means that the cookies are null for the first render????? which made stuff annoying
-    useEffect(() => {
+    // hopefully this change works with useMemo
+    useMemo(() => {
         console.log("use effect!")
         getCookies()
     } ,[]);
