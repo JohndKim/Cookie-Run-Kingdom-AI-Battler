@@ -41,11 +41,6 @@ function BattleInputs() {
             }
         })}
 
-
-        
-
-
-
     return (
         <section className="">
         {/* entire 5, 5 team layout*/}
@@ -74,7 +69,6 @@ function BattleInputs() {
                     <CookieSelect cookies={cookies}/>
                     <CookieSelect cookies={cookies}/>
                     <CookieSelect cookies={cookies}/>
-
                 </div>
             </div>
         </div>

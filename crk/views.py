@@ -62,4 +62,5 @@ def cookie_detail(request, pk):
 
 
 def runGame(request):
-    return battlerSystem.hello()
+    battle = battlerSystem.battleSystem(request.GET.items())
+    return battle.battleRun()

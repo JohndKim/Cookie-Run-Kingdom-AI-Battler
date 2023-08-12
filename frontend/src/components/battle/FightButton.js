@@ -1,15 +1,46 @@
 import axios from "axios";
+import {useState, useMemo} from 'react'
+//For testing first the link part
 
-const fetchAPI = () => {
+const fetchAPI = (cookies) => {
   axios({
     method: "GET",
-    url:"battle_system",
+    url:'battle_system',
+    params:{
+      q : cookies
+    }
   }).then(response => console.log(response.data))
+  .catch(error => console.log(error))
 }
 
 export default function FightButton(){
+  const [cookies , setCookies] = useState(null)
+  
+  function getCookies(){
+  axios({
+      method: "GET",
+      url:"cookies_db/",
+      // '/api/cookies/?format=json'
+      // 
+      }).then((response)=>{ // success
+          const data = response.data
+          setCookies(data)
+          // console.log(response.data)
+          // console.log(cookies)
+
+      }).catch((error) => { // failure
+      if (error.response) {
+          console.log(error.response);
+          console.log(error.response.status);
+          console.log(error.response.headers);
+          }
+      })}
+
+    useMemo(() => {
+      getCookies()}, []);
+
     return(
-    <div onClick =  { fetchAPI }>
+    <div onClick={() => fetchAPI(cookies)}>
         <div className="group relative inline-block text-sm font-medium text-white focus:outline-none focus:ring">
           <span
             className="absolute inset-0 border border-accent group-active:border-accent"

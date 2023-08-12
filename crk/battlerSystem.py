@@ -1,4 +1,10 @@
 from django.http import HttpResponse
 
-def hello():
-    return HttpResponse('imma kms')
+class battleSystem():
+    def __init__(self, cookie):
+        self.cookie = cookie
+
+    def battleRun(self):
+        return HttpResponse(self.cookie)
+
+
