@@ -1,9 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from rest_framework import viewsets
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
-from battler.battlerSystem import hello
+from . import battlerSystem
 # from .serializers import NoteSerializer
 # from .models import Notes
 
@@ -61,5 +61,5 @@ def cookie_detail(request, pk):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 
-def runGame():
-    hello()
+def runGame(request):
+    return battlerSystem.hello()
