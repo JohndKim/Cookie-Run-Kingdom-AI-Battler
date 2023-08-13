@@ -7,7 +7,7 @@ import axios from 'axios';
 
 import { useState, useEffect } from 'react';
 
-export default function CookieSelect(cookies) {
+export default function CookieSelect(cookies, teamNumber) {
     cookies = cookies.cookies
     // console.log('in CookieSelect')
     // const [cookies , setCookies] = useState(null)
@@ -45,6 +45,12 @@ export default function CookieSelect(cookies) {
 
     // use state for if cookie is selected or not
     const [ selection, setSelection ] = useState(null);
+    //use state for teams of cookies
+    const [ teamCookies, setTeamCookies ] = useState([{
+        team: Number,
+        cookieSelected: cookies
+    }]);
+
     // use state for entire cookie list object
     // label: Name
     // value: value given 
@@ -53,7 +59,7 @@ export default function CookieSelect(cookies) {
     // const [ cookies, setCookies ] = useState([{
     //     label: 'Strawberry Cookie',
     //     value: 'strawberry',
-        // src: strawberry,
+    //     src: strawberry,
     //     selected: false,
     // }, {
     //     label: 'Gingerbrave',
@@ -86,7 +92,11 @@ export default function CookieSelect(cookies) {
     // function to select cookie
     const handleSelect = (cookie) => {
         setSelection(cookie);
+        //when selecting cookie to send to python script but isnt working
+        setTeamCookies([...teamCookies, {team: teamNumber, cookieSelected: cookie}]);
+        console.log(teamCookies);
     };
+
 
 
     if (cookies) {

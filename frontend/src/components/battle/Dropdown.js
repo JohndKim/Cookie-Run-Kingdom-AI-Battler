@@ -37,7 +37,7 @@ function Dropdown({ cookies, value, onChange}) {
         onChange(cookie);
         //Getting cookie value and adding it to the array of Cookies
 
-        console.log(cookie)
+        // console.log(cookie)
     }
 
 

@@ -7,7 +7,8 @@ import axios from 'axios';
 function BattleInputs() {
     // console.log('in battleinputs')
     const [cookies , setCookies] = useState(null)
-
+    let team1 = 1;
+    let team2 = 2;
     // getCookies()
 
     // bro this thing doesnt run right away, it runs somehow one iteration late which means that the cookies are null for the first render????? which made stuff annoying
@@ -30,8 +31,8 @@ function BattleInputs() {
         }).then((response)=>{ // success
             const data = response.data
             setCookies(data)
-            console.log(response.data)
-            console.log(cookies)
+            // console.log(response.data)
+            // console.log(cookies)
 
         }).catch((error) => { // failure
         if (error.response) {
@@ -51,11 +52,11 @@ function BattleInputs() {
 
             {/* FIRST TEAM LAYOUT */}
                 <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
-                    <CookieSelect cookies={cookies}/>
-                    <CookieSelect cookies={cookies}/>
-                    <CookieSelect cookies={cookies}/>
-                    <CookieSelect cookies={cookies}/>
-                    <CookieSelect cookies={cookies}/>
+                    <CookieSelect cookies={cookies} teamNumber = {team1}/>
+                    <CookieSelect cookies={cookies} teamNumber = {team1}/>
+                    <CookieSelect cookies={cookies} teamNumber = {team1}/>
+                    <CookieSelect cookies={cookies} teamNumber = {team1}/>
+                    <CookieSelect cookies={cookies} teamNumber = {team1}/>
 
 
 
@@ -64,11 +65,11 @@ function BattleInputs() {
             {/* SECOND TEAM LAYOUT */}
 
                 <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
-                    <CookieSelect cookies={cookies}/>
-                    <CookieSelect cookies={cookies}/>
-                    <CookieSelect cookies={cookies}/>
-                    <CookieSelect cookies={cookies}/>
-                    <CookieSelect cookies={cookies}/>
+                    <CookieSelect cookies={cookies} teamNumber = {team2}/>
+                    <CookieSelect cookies={cookies} teamNumber = {team2}/>
+                    <CookieSelect cookies={cookies} teamNumber = {team2}/>
+                    <CookieSelect cookies={cookies} teamNumber = {team2}/>
+                    <CookieSelect cookies={cookies} teamNumber = {team2}/>
                 </div>
             </div>
         </div>

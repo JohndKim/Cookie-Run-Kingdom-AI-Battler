@@ -13,6 +13,7 @@ const fetchAPI = (cookies) => {
   .catch(error => console.log(error))
 }
 
+//For testing if battler can be connected
 export default function FightButton(){
   const [cookies , setCookies] = useState(null)
   

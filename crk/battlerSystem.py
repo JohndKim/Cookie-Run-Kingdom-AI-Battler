@@ -5,6 +5,6 @@ class battleSystem():
         self.cookie = cookie
 
     def battleRun(self):
-        return HttpResponse(self.cookie)
+        return HttpResponse('bruh')
 
 
