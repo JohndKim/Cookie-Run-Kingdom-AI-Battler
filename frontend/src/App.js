@@ -4,6 +4,10 @@ import Home from './pages/Home';
 import Battle from './pages/Battle';
 import About from './pages/About';
 import Cookies from './pages/Cookies';
+import axios from 'axios';
+
+axios.defaults.xsrfCookieName = 'csrftoken'
+axios.defaults.xsrfHeaderName = 'X-CSRFToken'
 
 
 // export default function App() {
